@@ -1,6 +1,6 @@
 describe('Smoak Test', () => {
   it('Devo conseguir acessar a url do WebChat 2.0', () =>{
-    cy.visit();
+    cy.visit('/');
   });
 
   describe('Ao carregar a tela', () => {
@@ -13,22 +13,6 @@ describe('Smoak Test', () => {
     it('Deverá aparecer o botão de Full Screen', () => {
       cy.get('.content-header-image')
         .should('be.visible');
-    });
-
-    it.only('Deverá ser possível deixar em Full Screen', () => {
-      cy.visit('/');
-
-      cy.wait(2000);
-
-      cy.get('.content-header-image')
-        .click({ force: true });
-    });
-
-    it('Deverá ser possível tirar de Full Screen', () => {
-      cy.get('.content-header-image')
-        .click();
-      
-        cy.wait(1300);
     });
 
     it('Deve aparecer a logo da New Way', () => {
